@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>code</title>
+</head>
+<body>
+    <ul class="language"></ul>
+    <li>JavaScript</li>
+</body>
+<script>
+    function addLang(langName) {
+      const li =  document.createElement('li')
+      li.innerHTML = `${langName}`
+      document.querySelector(`.languge`)
+      appendChild(li)
+        
+    }
+    addLang("python")
+    addLang("c")
+
+    function addOPtimize(langName) {
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOPtimize('golang')
+    // EDIT
+
+    const secondLang = document.querySelector("li:nth-child(2)")
+    secondLang.innerHTML = "MOJO"
+
+    const newLi = document.createElement('li')
+    newLi.textContent ="MOJO"
+    secondLang.replaceWith(newLi)
+</script>
+</html>
