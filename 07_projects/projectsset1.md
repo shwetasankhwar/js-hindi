@@ -91,7 +91,7 @@ setInterval(function () {
 
 ```
 
-### project 4 solution code
+## project 4 solution code
 ```
 document.addEventListener('DOMContentLoaded', () => {
   let randomNumber = parseInt(Math.random() * 100 + 1);
@@ -183,5 +183,61 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+```
+## project 5 solution
+```
+const insert = document.getElementById('insert');
+
+window.addEventListener('keydown', (e) => {
+  insert.innerHTML = `
+  <div class = 'colour'>
+  <table>
+  <tr>
+    <th>key</th>
+    <th>keyCode</th>
+    <th>code</th>
+  </tr>
+  <tr>
+    <td>${e.key === ' ' ? 'Space' : e.key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+  
+</table> 
+  </div>
+  `;
+});
+
+
+```
+### project 6 solution
+``` javascript// generate a random colour
+
+const randomColour = function () {
+  const hex = '0123456789AbcdEF';
+  let colour = '#';
+  for (let i = 0; i < 6; i++) {
+    colour += hex[Math.floor(Math.random() * 16)];
+  }
+  return colour;
+};
+let intervalID;
+const startChangingColour = function () {
+  if (!intervalID) {
+    intervalID = setInterval(changeBGColur, 1000);
+  }
+
+  function changeBGColur() {
+    document.body.style.backgroundColor = randomColour();
+  }
+};
+const stopChangingColour = function () {
+  clearInterval(intervalID);
+  intervalID = null;
+};
+document.querySelector('#start').addEventListener('click', startChangingColour);
+document.querySelector('#stop').addEventListener('click', stopChangingColour);
+console.log(randomColour());
+
 
 ```
